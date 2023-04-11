@@ -7,8 +7,8 @@
     <section class="hero" id="home">
         <main class="content">
             <h1 class="display-4 head">
-                Selamat <span id="waktu"></span>, <br />
-                <span class="second_color">Christian</span> disini
+                Selamat <span class="waktu"></span>, <br />
+                <span>Christian</span> disini
                 <h1 class="display-4 head">Ada yang bisa saya bantu?</h1>
             </h1>
             <p class="body">FrontEnd Web Devoloper</p>
@@ -23,7 +23,14 @@
                     <i data-feather="github"></i>
                 </a>
             </div>
-            <a href="#" class="cta">Contact Me</a>
+            <div class="lang">
+                <a href="{{ route('home') }}" class="cta activeL"><img src="{{ url('asset/img/us.png') }}" alt=""
+                        width="20px">
+                    English</a>
+                <a href="{{ route('indo') }}" class="cta"><img src="{{ url('asset/img/id.png') }}" alt=""
+                        width="20px">
+                    Indonesia</a>
+            </div>
         </main>
         <div class="image">
             <img src="{{ url('asset/img/tian.jpg') }}" alt="">
@@ -31,7 +38,7 @@
     </section>
 
     <section class="about" id="about">
-        <h2>About <span>me</span></h2>
+        <h2>Tentang <span>saya</span></h2>
 
         <div class="row">
             <div class="about-img">
@@ -43,21 +50,24 @@
                     <span style="color: var(--btn);">Christian</span>
                 </h3>
                 <p>
-                    People usually goes by Chris or Tian and I'm an Indonesian.
-                    Indonesia is a big country from South East Asia, if you dont know. I
-                    was born in Surabaya in 1999 and raised here as a Javanese. After
-                    graduated from Petra Vacation Highschool in 2018 I'm not straightly
-                    enroll the collage, I was working as almost everything to seek my
-                    true passion and potential. And here I finally found what I'm trully
-                    into, which is Programming and Designing web.
+                    Saya biasa dipanggil Chris atau Tian, dan saya orang Indonesia.
+                    Indonesia adalah negara besar di Asia Tenggara, jika Anda tidak
+                    tahu. Saya lahir di Surabaya pada tahun 1999 dan dibesarkan di sini
+                    sebagai orang Jawa. Setelah lulus dari SMK Petra pada tahun 2018,
+                    saya tidak langsung mendaftar di perguruan tinggi, saya bekerja
+                    hampir di semua bidang untuk mencari passion dan potensi saya yang
+                    sebenarnya. Dan di sini saya akhirnya menemukan apa yang benar-benar
+                    passion saya, yaitu Pemrograman dan Desain web.
+
                     <br />
                     <br />
-                    I started to learn about Web Design and Web Devolopment in 2020
-                    during the Covid Pandemic, I took online lessons as much as I can
-                    and now I'm well familiar with HTML, CSS, Javascript, PHP and
-                    Github. In fact, now I could work on a project with PHP Framework,
-                    Laravel Framework. I also learn many Javascript Library like JQuery,
-                    AJAX, SwiperJS and ReactJS.
+                    Saya mulai belajar tentang Desain Web dan Pengembangan Web pada
+                    tahun 2020 selama Pandemi Covid, saya mengambil pelajaran online
+                    sebanyak yang saya bisa dan sekarang saya sudah sangat akrab dengan
+                    HTML, CSS, Javascript, PHP dan Github. Bahkan, sekarang saya bisa
+                    mengerjakan project dengan PHP Framework, Laravel Framework. Saya
+                    juga mempelajari banyak Javascript Library seperti JQuery, AJAX,
+                    SwiperJS dan ReactJS.
                 </p>
             </div>
         </div>
@@ -68,9 +78,9 @@
     <!-- Menu section start -->
 
     <section class="menu" id="menu">
-        <h2>Skill <span>saya</span></h2>
+        <h2>Skills <span>saya</span></h2>
         <p>
-            The Technology that i use
+            Teknologi yang saya kuasai
         </p>
 
         <div class="row">
@@ -130,9 +140,9 @@
     <!-- Project section start -->
 
     <section class="menu" id="project">
-        <h2><span>My</span> Projects</h2>
+        <h2>Projects <span>saya</span></h2>
         <p>
-            The Project that i was working on
+            Project yang pernah saya kerjakan
         </p>
 
         <div class="row">
@@ -195,9 +205,9 @@
 
     <!-- contact section start -->
     <section class="contact" id="contact">
-        <h2><span>Kontak</span> kami</h2>
+        <h2><span>Kontak</span> saya</h2>
         <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, est.
+            Isi form dibawah ini
         </p>
 
         <div class="row">
@@ -207,15 +217,21 @@
 
             <form action="">
                 <div class="input-group">
-                    <i data-feather="user"></i>
+                    <p>
+                        <i data-feather="user"></i>
+                    </p>
                     <input type="text" placeholder="Nama" />
                 </div>
                 <div class="input-group">
-                    <i data-feather="mail"></i>
+                    <p>
+                        <i data-feather="mail"></i>
+                    </p>
                     <input type="email" placeholder="E-mail" />
                 </div>
                 <div class="input-group">
-                    <i data-feather="phone"></i>
+                    <p>
+                        <i data-feather="phone"></i>
+                    </p>
                     <input type="number" placeholder="Phone Number" />
                 </div>
                 <button type="submit" class="btn">Kirim Pesan</button>
@@ -223,5 +239,4 @@
         </div>
     </section>
     <!-- contact section end -->
-
 @endsection

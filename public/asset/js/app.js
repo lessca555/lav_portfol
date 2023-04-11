@@ -14,31 +14,22 @@ document.addEventListener("click", function (e) {
     }
 });
 
-let waktu = document.getElementById("waktu");
+let waktu = document.querySelector(".waktu");
 let date = new Date();
 let hours = date.getHours();
 
 if (hours >= 6 && hours < 12) {
     waktu.textContent = "pagi";
+    waktu.style.color = "#fff";
 } else if (hours >= 12 && hours < 15) {
     waktu.textContent = "siang";
+    waktu.style.color = "#fff2cc";
 } else if (hours >= 15 && hours < 18) {
     waktu.textContent = "sore";
+    waktu.style.color = "#cfe2f3";
 } else {
     waktu.textContent = "malam";
+    waktu.style.color = "#000";
 }
-
-$(function () {
-    var path = window.location.href; // Mengambil data URL pada Address bar
-    $(".lang a").each(function () {
-        // Jika URL pada menu ini sama persis dengan path...
-        if (this.href === path) {
-            // Tambahkan kelas "active" pada menu ini
-            $(this).addClass("activeL");
-        } else {
-            $(this).removeClass("activeL");
-        }
-    });
-});
 
 

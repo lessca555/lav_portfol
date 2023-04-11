@@ -11,4 +11,9 @@ class HomeController extends Controller
         $projects = projects::all();
         return view('home', ['projects' => $projects]);
     }
+    public function index2()
+    {
+        $projects = projects::all();
+        return view('indo', ['projects' => $projects]);
+    }
 }

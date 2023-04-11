@@ -24,9 +24,11 @@
                 </a>
             </div>
             <div class="lang">
-                <a href="{{ route('home') }}" class="cta activeL"><img src="{{ url('asset/img/us.png') }}" alt="" width="20px">
+                <a href="{{ route('home') }}" class="cta activeL"><img src="{{ url('asset/img/us.png') }}" alt=""
+                        width="20px">
                     English</a>
-                <a href="{{ route('home') }}" class="cta"><img src="{{ url('asset/img/id.png') }}" alt="" width="20px">
+                <a href="{{ route('indo') }}" class="cta"><img src="{{ url('asset/img/id.png') }}" alt=""
+                        width="20px">
                     Indonesia</a>
             </div>
         </main>
@@ -140,14 +142,12 @@
             The Project that i was working on
         </p>
 
-        <div class="row">
+        <div class="row row-project">
             @foreach ($projects as $project)
                 <a href="{{ url('project') }}/{{ $project->id }}">
                     <div class="menu-card">
                         <img src="{{ url('images') }}/{{ $project->image }}" alt="" class="menu-card-img" />
-                        <h3 class="menu-card-title">Nama Project : {{ $project->name }}</h3>
-                        <h3 class="menu-card-title">Kategori: {{ $project->kategori }}</h3>
-                        <h3 class="menu-card-title">Technology: {{ $project->tech }}</h3>
+                        <h3 class="menu-card-title">{{ $project->name }}</h3>
                     </div>
                 </a>
             @endforeach
@@ -193,6 +193,20 @@
                 <h3 class="menu-card-title">Flutter and</h3>
                 <h3 class="menu-card-title">Level: Begineer</h3>
             </div>
+
+            <div class="menu-card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.eY2jpFO7RHl0P7En39N6VQHaDt&pid=Api&P=0" alt=""
+                    class="menu-card-img" />
+                <h3 class="menu-card-title">Flutter and</h3>
+                <h3 class="menu-card-title">Level: Begineer</h3>
+            </div>
+
+            <div class="menu-card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.eY2jpFO7RHl0P7En39N6VQHaDt&pid=Api&P=0" alt=""
+                    class="menu-card-img" />
+                <h3 class="menu-card-title">Flutter and</h3>
+                <h3 class="menu-card-title">Level: Begineer</h3>
+            </div>
         </div>
     </section>
 
@@ -200,9 +214,9 @@
 
     <!-- contact section start -->
     <section class="contact" id="contact">
-        <h2><span>Kontak</span> kami</h2>
+        <h2>Contact <span>me</span></h2>
         <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, est.
+            Leave your messege
         </p>
 
         <div class="row">
@@ -212,15 +226,21 @@
 
             <form action="">
                 <div class="input-group">
-                    <i data-feather="user"></i>
+                    <p>
+                        <i data-feather="user"></i>
+                    </p>
                     <input type="text" placeholder="Nama" />
                 </div>
                 <div class="input-group">
-                    <i data-feather="mail"></i>
+                    <p>
+                        <i data-feather="mail"></i>
+                    </p>
                     <input type="email" placeholder="E-mail" />
                 </div>
                 <div class="input-group">
-                    <i data-feather="phone"></i>
+                    <p>
+                        <i data-feather="phone"></i>
+                    </p>
                     <input type="number" placeholder="Phone Number" />
                 </div>
                 <button type="submit" class="btn">Kirim Pesan</button>
@@ -229,4 +249,41 @@
     </section>
     <!-- contact section end -->
 
+    <script>
+        const row = document.querySelector(".row-project"); // select the div row
+        const menuItems = row.querySelectorAll('.menu-card'); // get all menu items in the div row
+        const itemsToShow = 6; // set the maximum number of items to show
+        let hiddenItems = []; // create an array to store hidden items
+
+        for (let i = itemsToShow; i < menuItems.length; i++) {
+            // loop through all items starting from the seventh item
+            menuItems[i].classList.add("hidden"); // add a class to hide the item
+            hiddenItems.push(menuItems[i]); // add the item to the hidden items array
+        }
+
+        if (hiddenItems.length > 0) {
+            // if there are hidden items
+            const loadMoreBtn = document.createElement("button"); // create a new button element
+            loadMoreBtn.classList.add('load-more') // set the button text
+            loadMoreBtn.textContent = "Load More"; // set the button text
+            loadMoreBtn.addEventListener("click", () => {
+                // add click event listener to the button
+                hiddenItems.forEach((item) => item.classList.remove("hidden")); // show all hidden items
+                loadMoreBtn.style.display = "none"; // hide the button
+                showLessBtn.style.display = "inline-block"
+            });
+            row.after(loadMoreBtn); // insert the button after the div row
+
+            const showLessBtn = document.createElement("button"); // create a new button element
+            showLessBtn.textContent = "Show Less"; // set the button text
+            showLessBtn.classList.add('show-less') // set the button text
+            showLessBtn.style.display = "none"; // hide the "Show Less" button
+            showLessBtn.addEventListener("click", () => { // add click event listener to the button
+                hiddenItems.forEach(item => item.classList.add("hidden")); // hide all shown items
+                loadMoreBtn.style.display = "inline-block"; // show the "Load More" button
+                showLessBtn.style.display = "none"; // hide the "Show Less" button
+            });
+            row.after(showLessBtn); // insert the button after the div row
+        }
+    </script>
 @endsection

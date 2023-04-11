@@ -42,16 +42,6 @@
     <script>
         AOS.init();
 
-        function activeMenu() {
-            let len = sec.length;
-            while (--len && window.scrollY + 97 < sec[len].offsetTop) {}
-            li.forEach((ltx) => ltx.classList.remove("active-home"));
-            li[len].classList.add("active-home");
-        }
-
-        activeMenu();
-        window.addEventListener("scroll", activeMenu);
-
         $(function() {
             var path = window.location.href; // Mengambil data URL pada Address bar
             $(".lang a").each(function() {
